@@ -35,11 +35,12 @@ class Hard implements IFloor
                 return true;
             }
             echo " \n ::::: Remaining Area to be cleaned: ".$area. " ::::: ";
-
-            if ($area / ($this->batteryInstance->getWorkTimeInOneCharge() / $this->cleaningTimePerMeterSquare)) {
-                $this->batteryInstance->charge();
-            }
+   
+            $this->batteryInstance->charge();
+            
         }
+
+        return true;
     }
 
 }
